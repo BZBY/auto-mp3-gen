@@ -1,0 +1,49 @@
+# 核心依赖
+# 注意：如需GPU加速，请先卸载CPU版本再安装CUDA版本
+# pip uninstall torch torchvision opencv-python
+# 然后安装CUDA版本（见下方安装说明）
+opencv-python>=4.5.0
+numpy>=1.21.0
+
+# PyTorch (CPU版本 - 默认)
+# 如需GPU加速，请使用下面的CUDA版本替代
+# torch>=2.0.0
+# torchvision>=0.15.0
+
+# PyTorch CUDA版本 (GPU加速)
+--index-url https://download.pytorch.org/whl/cu118
+torch==2.1.0+cu118
+torchvision==0.16.0+cu118
+
+# CLIP模型
+git+https://github.com/openai/CLIP.git
+
+# 机器学习
+scikit-learn>=1.0.0
+scipy>=1.7.0
+
+# 数据处理
+pandas>=1.3.0
+tqdm>=4.62.0
+
+# TransNetV2 (可选，用于更好的镜头检测) - PyTorch版本
+transnetv2-pytorch
+
+# 图像处理和工具
+Pillow>=8.0.0
+pathlib2; python_version < '3.4'
+
+# OpenCV CUDA版本 (可选，用于GPU图像处理加速)
+# 如需GPU图像处理加速，请卸载默认OpenCV并安装CUDA版本：
+# pip uninstall opencv-python opencv-python-headless
+# pip install opencv-contrib-python
+# 或者从源码编译OpenCV with CUDA support
+
+# GPU监控工具 (可选)
+# nvidia-ml-py3  # GPU内存监控
+
+# 开发和测试依赖
+pytest>=6.0.0
+pytest-cov>=2.12.0
+black>=21.0.0
+flake8>=3.9.0
